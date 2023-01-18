@@ -21,6 +21,7 @@ private slots:
     void onCloseClicked();
     void onMaxClicked();
     void onMinClicked();
+    void mainMenuClicked();
 
 };
 #endif // WIDGET_H
