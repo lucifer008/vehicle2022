@@ -17,5 +17,10 @@ public:
 
 private:
     Ui::Widget *ui;
+private slots:
+    void onCloseClicked();
+    void onMaxClicked();
+    void onMinClicked();
+
 };
 #endif // WIDGET_H
