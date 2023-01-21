@@ -16,9 +16,11 @@ set(PROJECT_SOURCES
         widget.cpp
         widget.h
         widget.ui
+        test.h test.cpp
 )
 add_subdirectory(video)
 include_directories(./video)
+
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(vehicle2022
@@ -43,7 +45,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
+target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets video)
 
 set_target_properties(vehicle2022 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
