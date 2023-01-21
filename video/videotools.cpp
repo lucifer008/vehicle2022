@@ -1,8 +1,8 @@
-#include "ffmpeg.h"
+#include "videotools.h"
 #include <QDebug>
-FFmpge::FFmpge(){
+VideoTools::VideoTools(){
     qDebug()<<"FFmpge 构造器";
 }
-void FFmpge::play(){
+void VideoTools::play(){
     qDebug()<<"hello play!";
 }

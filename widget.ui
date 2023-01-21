@@ -150,7 +150,7 @@
       <string notr="true">border:1px solid green</string>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="pagePlayBack">
       <layout class="QHBoxLayout" name="horizontalLayout_5">

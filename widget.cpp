@@ -3,7 +3,7 @@
 #include <QList>
 #include <QMessageBox>
 #include <QAbstractButton>
-#include "ffmpeg.h"
+#include "videotools.h"
 #include "test.h"
 
 Widget::Widget(QWidget *parent)
@@ -67,8 +67,8 @@ void Widget::mainMenuClicked(){
    else if (btnTxt == "用户退出") {
        exit(0);
    }
-   FFmpge ffmpge;
-  ffmpge.play();
+   VideoTools videoTools;
+  videoTools.play();
    Test test;
    test.hello();
 }
