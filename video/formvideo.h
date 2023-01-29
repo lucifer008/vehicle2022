@@ -3,6 +3,12 @@
 
 #include <QWidget>
 
+
+//#ifndef gcc45
+//#include "libavutil/hwcontext.h"
+//#include "libavutil/hwcontext_qsv.h"
+//#endif
+
 namespace Ui {
 class FormVideo;
 }

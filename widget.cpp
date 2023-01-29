@@ -72,5 +72,6 @@ void Widget::mainMenuClicked(){
 //   videoTools.play();
 //   Test test;
 //   test.hello();
+    this->frmVideo.setWindowModality(Qt::ApplicationModal);
     this->frmVideo.show();
 }

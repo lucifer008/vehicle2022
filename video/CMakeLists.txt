@@ -4,5 +4,13 @@ add_library(video SHARED
     videotools.cpp
     formvideo.h formvideo.cpp formvideo.ui
 )
-target_link_libraries(video PRIVATE Qt6::Core Qt6::Widgets)
+
+# 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
+set(ffmpeg_libs_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpeg4/winlib64)
+set(ffmpeg_headers_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpeg4/include64)
+file(GLOB ffmpeg_dylibs ${ffmpeg_libs_DIR}/*.lib)
+
+include_directories(${ffmpeg_headers_DIR})
+link_directories(${ffmpeg_libs_DIR})
+target_link_libraries(video PRIVATE Qt6::Core Qt6::Widgets ${ffmpeg_dylibs})
 target_include_directories(video INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
