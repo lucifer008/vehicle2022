@@ -1,6 +1,7 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
+#include "formvideo.h"
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -17,6 +18,7 @@ public:
 
 private:
     Ui::Widget *ui;
+    FormVideo frmVideo;
 private slots:
     void onCloseClicked();
     void onMaxClicked();

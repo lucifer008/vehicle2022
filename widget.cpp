@@ -3,8 +3,9 @@
 #include <QList>
 #include <QMessageBox>
 #include <QAbstractButton>
+#include "formvideo.h"
 #include "videotools.h"
-#include "test.h"
+//#include "test.h"
 
 Widget::Widget(QWidget *parent)
     : QWidget(parent)
@@ -67,8 +68,9 @@ void Widget::mainMenuClicked(){
    else if (btnTxt == "用户退出") {
        exit(0);
    }
-   VideoTools videoTools;
-  videoTools.play();
-   Test test;
-   test.hello();
+//   VideoTools videoTools;
+//   videoTools.play();
+//   Test test;
+//   test.hello();
+    this->frmVideo.show();
 }
