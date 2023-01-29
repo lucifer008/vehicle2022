@@ -20,6 +20,8 @@ set(PROJECT_SOURCES
 )
 add_subdirectory(video)
 include_directories(./video)
+add_subdirectory(map)
+include_directories(./map)
 
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -45,7 +47,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets video)
+target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets video map)
 
 set_target_properties(vehicle2022 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com

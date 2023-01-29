@@ -3,6 +3,7 @@
 #include <QList>
 #include <QMessageBox>
 #include <QAbstractButton>
+#include "map.h"
 #include "formvideo.h"
 #include "videotools.h"
 //#include "test.h"
@@ -72,6 +73,10 @@ void Widget::mainMenuClicked(){
 //   videoTools.play();
 //   Test test;
 //   test.hello();
+
+   Map mapTest;
+   mapTest.test();
+
     this->frmVideo.setWindowModality(Qt::ApplicationModal);
     this->frmVideo.show();
 }
