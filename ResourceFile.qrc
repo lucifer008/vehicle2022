@@ -1,2 +1,9 @@
-<!DOCTYPE RCC>
-<RCC version="1.0"/>
+<RCC>
+    <qresource prefix="/img">
+        <file>images/btn_close.png</file>
+        <file>images/btn_ok.png</file>
+        <file>images/msg_error.png</file>
+        <file>images/msg_info.png</file>
+        <file>images/msg_question.png</file>
+    </qresource>
+</RCC>

@@ -23,6 +23,7 @@ Widget::Widget(QWidget *parent)
     foreach (QAbstractButton *btn, listBus) {
         connect(btn,&QToolButton::clicked,this,Widget::mainMenuClicked);
     }
+
 }
 
 Widget::~Widget()
@@ -56,6 +57,11 @@ void Widget::mainMenuClicked(){
 
    if (btnTxt == "首页") {
        ui->stackedWidget->setCurrentIndex(0);
+
+       //临时测试代码
+       this->frmTest.setWindowModality(Qt::ApplicationModal);
+       this->frmTest.show();
+       return;
    } else if (btnTxt == "视频") {
        ui->stackedWidget->setCurrentIndex(1);
    } else if (btnTxt == "设置") {

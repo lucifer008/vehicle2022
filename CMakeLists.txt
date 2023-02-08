@@ -18,6 +18,7 @@ set(PROJECT_SOURCES
         widget.h
         widget.ui
         test.h test.cpp
+        formtest.h formtest.cpp formtest.ui
         ResourceFile.qrc
 )
 # 类库定义和类库cmakeLists.txt文件呼应
@@ -28,12 +29,12 @@ include_directories(./map)
 
 
 #资源文件设置
-qt_add_resources(vehicle2022 "ResourceFile"
-    PREFIX "/images"
-    FILES
-        images/btn_close.png
-        images/btn_ok.png
-)
+#qt_add_resources(vehicle2022 "ResourceFile"
+#    PREFIX "/img"
+#    FILES
+#        /images/btn_close.png
+#        /images/btn_ok.png
+#)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(vehicle2022
