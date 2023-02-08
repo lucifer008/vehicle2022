@@ -9,6 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 set(PROJECT_SOURCES
@@ -17,17 +18,28 @@ set(PROJECT_SOURCES
         widget.h
         widget.ui
         test.h test.cpp
+        ResourceFile.qrc
 )
+# 类库定义和类库cmakeLists.txt文件呼应
 add_subdirectory(video)
 include_directories(./video)
 add_subdirectory(map)
 include_directories(./map)
 
 
+#资源文件设置
+qt_add_resources(vehicle2022 "ResourceFile"
+    PREFIX "/images"
+    FILES
+        images/btn_close.png
+        images/btn_ok.png
+)
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(vehicle2022
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ResourceFile.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET vehicle2022 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -47,6 +59,7 @@ else()
     endif()
 endif()
 
+#引用库及自定义库设置
 target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets video map)
 
 set_target_properties(vehicle2022 PROPERTIES
@@ -56,6 +69,7 @@ set_target_properties(vehicle2022 PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
+
 
 install(TARGETS vehicle2022
     BUNDLE DESTINATION .
