@@ -3,6 +3,8 @@
 #include <QList>
 #include <QMessageBox>
 #include <QAbstractButton>
+#include <qelapsedtimer.h>
+#include <qfile.h>
 #include "map.h"
 #include "formvideo.h"
 #include "videotools.h"
@@ -24,6 +26,10 @@ Widget::Widget(QWidget *parent)
         connect(btn,&QToolButton::clicked,this,Widget::mainMenuClicked);
     }
 
+    //测试皮肤
+    //this->on_btnStyle_Blacksoft_clicked();
+    //this->on_btnStyle_Flatgray_clicked();
+    this->on_btnStyle_Lightblue_clicked();
 }
 
 Widget::~Widget()
@@ -85,4 +91,51 @@ void Widget::mainMenuClicked(){
 
     this->frmVideo.setWindowModality(Qt::ApplicationModal);
     this->frmVideo.show();
+}
+
+
+void Widget::loadStyle(const QString &qssFile)
+{
+    //开启计时
+    QElapsedTimer time;
+    time.start();
+
+    //加载样式表
+    QString qss;
+    QFile file(qssFile);
+    if (file.open(QFile::ReadOnly)) {
+        //用QTextStream读取样式文件不用区分文件编码 带bom也行
+        QStringList list;
+        QTextStream in(&file);
+        //in.setCodec("utf-8");
+        while (!in.atEnd()) {
+            QString line;
+            in >> line;
+            list << line;
+        }
+
+        file.close();
+        qss = list.join("\n");
+        QString paletteColor = qss.mid(20, 7);
+        qApp->setPalette(QPalette(paletteColor));
+        //用时主要在下面这句
+        qApp->setStyleSheet(qss);
+    }
+
+    qDebug() << "用时:" << time.elapsed();
+}
+
+void Widget::on_btnStyle_Lightblue_clicked()
+{
+    loadStyle(":/qss/qss/lightblue.css");
+}
+
+void Widget::on_btnStyle_Flatgray_clicked()
+{
+    loadStyle(":/qss/qss/flatgray.css");
+}
+
+void Widget::on_btnStyle_Blacksoft_clicked()
+{
+    loadStyle(":/qss/qss/blacksoft.css");
 }

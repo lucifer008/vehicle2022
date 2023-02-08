@@ -21,11 +21,14 @@ private:
     Ui::Widget *ui;
     FormVideo frmVideo;
     FormTest frmTest;
+    void loadStyle(const QString &qssFile);
 private slots:
     void onCloseClicked();
     void onMaxClicked();
     void onMinClicked();
     void mainMenuClicked();
-
+    void on_btnStyle_Lightblue_clicked();
+    void on_btnStyle_Flatgray_clicked();
+    void on_btnStyle_Blacksoft_clicked();
 };
 #endif // WIDGET_H
