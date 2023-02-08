@@ -73,8 +73,16 @@ void Widget::mainMenuClicked(){
         ui->stackedWidget->setCurrentIndex(1);
     } else if (btnTxt == "设置") {
         ui->stackedWidget->setCurrentIndex(2);
+
+        return;
     } else if (btnTxt == "地图") {
         ui->stackedWidget->setCurrentIndex(3);
+
+        //测试地图
+        this->mapIndex.setWindowModality(Qt::ApplicationModal);
+        this->mapIndex.show();
+        return;
+
 
     } else if (btnTxt == "情报") {
         ui->stackedWidget->setCurrentIndex(4);

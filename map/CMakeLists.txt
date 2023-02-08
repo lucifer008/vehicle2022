@@ -2,6 +2,7 @@ project(map)
 add_library(map SHARED
     map.h
     map.cpp
+    mapindex.h mapindex.cpp mapindex.ui
 )
 
 # 设置ffmpeg依赖库及头文件所在目录，并存进指定变量

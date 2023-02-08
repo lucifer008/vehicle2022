@@ -3,6 +3,7 @@
 
 #include "formtest.h"
 #include "formvideo.h"
+#include "mapindex.h"
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -21,6 +22,7 @@ private:
     Ui::Widget *ui;
     FormVideo frmVideo;
     FormTest frmTest;
+    MapIndex mapIndex;
     void loadStyle(const QString &qssFile);
 private slots:
     void onCloseClicked();
