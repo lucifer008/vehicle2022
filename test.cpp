@@ -1,6 +1,6 @@
 #include "test.h"
 #include <iostream>
-
+#include <QtWebChannel>
 Test::Test()
 {
 

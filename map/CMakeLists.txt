@@ -13,5 +13,6 @@ add_library(map SHARED
 #include_directories(${ffmpeg_headers_DIR})
 #link_directories(${ffmpeg_libs_DIR})
 #target_link_libraries(video PRIVATE Qt6::Core Qt6::Widgets ${ffmpeg_dylibs})
-target_link_libraries(map PRIVATE Qt6::Core Qt6::Widgets)
+#find_package(map Qt6 REQUIRED COMPONENTS WebEngineWidgets)
+target_link_libraries(map PRIVATE Qt6::Core Qt6::Widgets Qt6::WebChannel)
 target_include_directories(map INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
