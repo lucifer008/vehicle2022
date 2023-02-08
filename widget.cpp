@@ -55,40 +55,40 @@ void Widget::onMaxClicked(){
 void Widget::mainMenuClicked(){
     QAbstractButton *btn=(QAbstractButton *)sender();
 
-   QString btnTxt=btn->text();
-   QList<QAbstractButton *> tbtns = ui->widgetBusiness->findChildren<QAbstractButton *>();
-   foreach (QAbstractButton *btn, tbtns) {
-       btn->setChecked(btn == btn);
-   }
+    QString btnTxt=btn->text();
+    QList<QAbstractButton *> tbtns = ui->widgetBusiness->findChildren<QAbstractButton *>();
+    foreach (QAbstractButton *btn, tbtns) {
+        btn->setChecked(btn == btn);
+    }
 
-   if (btnTxt == "首页") {
-       ui->stackedWidget->setCurrentIndex(0);
+    if (btnTxt == "首页") {
+        ui->stackedWidget->setCurrentIndex(0);
 
-       //临时测试代码
-       //测试QPushButton ico
-       this->frmTest.setWindowModality(Qt::ApplicationModal);
-       this->frmTest.show();
-       return;
-   } else if (btnTxt == "视频") {
-       ui->stackedWidget->setCurrentIndex(1);
-   } else if (btnTxt == "设置") {
-       ui->stackedWidget->setCurrentIndex(2);
-   } else if (btnTxt == "地图") {
-       ui->stackedWidget->setCurrentIndex(3);
+        //临时测试代码
+        //测试QPushButton ico
+        this->frmTest.setWindowModality(Qt::ApplicationModal);
+        this->frmTest.show();
+        return;
+    } else if (btnTxt == "视频") {
+        ui->stackedWidget->setCurrentIndex(1);
+    } else if (btnTxt == "设置") {
+        ui->stackedWidget->setCurrentIndex(2);
+    } else if (btnTxt == "地图") {
+        ui->stackedWidget->setCurrentIndex(3);
 
-} else if (btnTxt == "情报") {
-    ui->stackedWidget->setCurrentIndex(4);
-}
-   else if (btnTxt == "用户退出") {
-       exit(0);
-   }
-//   VideoTools videoTools;
-//   videoTools.play();
-//   Test test;
-//   test.hello();
+    } else if (btnTxt == "情报") {
+        ui->stackedWidget->setCurrentIndex(4);
+    }
+    else if (btnTxt == "用户退出") {
+        exit(0);
+    }
+    //   VideoTools videoTools;
+    //   videoTools.play();
+    //   Test test;
+    //   test.hello();
 
-   Map mapTest;
-   mapTest.test();
+    Map mapTest;
+    mapTest.test();
 
     this->frmVideo.setWindowModality(Qt::ApplicationModal);
     this->frmVideo.show();
