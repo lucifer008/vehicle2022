@@ -65,6 +65,7 @@ void Widget::mainMenuClicked(){
        ui->stackedWidget->setCurrentIndex(0);
 
        //临时测试代码
+       //测试QPushButton ico
        this->frmTest.setWindowModality(Qt::ApplicationModal);
        this->frmTest.show();
        return;
