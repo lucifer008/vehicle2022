@@ -3,6 +3,9 @@ add_library(video SHARED
     videotools.h
     videotools.cpp
     formvideo.h formvideo.cpp formvideo.ui
+    ffmpeghead.h
+    ffmpeg.cpp
+    ffmpeg.h
 )
 
 # 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
