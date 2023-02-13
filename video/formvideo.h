@@ -1,6 +1,7 @@
 #ifndef FORMVIDEO_H
 #define FORMVIDEO_H
 
+#include "ffmpeg.h"
 #include <QWidget>
 
 
@@ -23,6 +24,7 @@ public:
 
 private:
     Ui::FormVideo *ui;
+    FFmpegWidget *ffmpegWidget;
 };
 
 #endif // FORMVIDEO_H

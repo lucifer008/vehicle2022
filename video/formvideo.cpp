@@ -1,4 +1,6 @@
 #include "formvideo.h"
+#include "ffmpeg.h"
+#include "formembed.h"
 #include "ui_formvideo.h"
 //引入ffmpeg头文件
 //extern "C" {
@@ -26,6 +28,19 @@ FormVideo::FormVideo(QWidget *parent) :
     ui(new Ui::FormVideo)
 {
     ui->setupUi(this);
+    //无法提升，暂时代码引入
+    //this->ui->widget_2=new FormEmbed(this);
+
+    //手动追加
+    this->ffmpegWidget=new FFmpegWidget(this);
+    this->ui->verticalLayout->addWidget(ffmpegWidget);
+    connect(ui->pushButton,&QPushButton::clicked,this,[=](){
+        qDebug()<<"开始播放>>";
+        ffmpegWidget->setUrl("https://media.w3.org/2010/05/sintel/trailer.mp4");
+       ffmpegWidget->open();
+       qDebug()<<"播放已启动>>";
+    });
+
     // 设置控制台输出级别
     //const char *avcodecConfig =avcodec_configuration();
 

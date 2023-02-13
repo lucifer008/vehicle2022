@@ -81,7 +81,9 @@ void Widget::mainMenuClicked(){
         return;
     } else if (btnTxt == "设置") {
         ui->stackedWidget->setCurrentIndex(2);
-
+        //子项目窗体调用演示
+        this->frmVideo.setWindowModality(Qt::ApplicationModal);
+        this->frmVideo.show();
         return;
     } else if (btnTxt == "地图") {
         ui->stackedWidget->setCurrentIndex(3);

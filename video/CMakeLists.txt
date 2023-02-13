@@ -2,6 +2,7 @@ project(video)
 add_library(video SHARED
     videotools.h
     videotools.cpp
+    formembed.h formembed.cpp formembed.ui
     formvideo.h formvideo.cpp formvideo.ui
     ffmpeghead.h
     ffmpeg.cpp
