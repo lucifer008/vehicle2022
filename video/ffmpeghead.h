@@ -26,10 +26,10 @@ extern "C" {
 #include "libavdevice/avdevice.h"
 #endif
 
-#ifndef gcc45
-#include "libavutil/hwcontext.h"
-#include "libavutil/hwcontext_qsv.h"
-#endif
+//#ifndef gcc45
+//#include "libavutil/hwcontext.h"
+//#include "libavutil/hwcontext_qsv.h"
+//#endif
 }
 
 #include "qdatetime.h"

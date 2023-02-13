@@ -365,6 +365,7 @@ void FFmpegThread::stop()
 //实时视频显示窗体类
 FFmpegWidget::FFmpegWidget(QWidget *parent) : QWidget(parent)
 {
+
     thread = new FFmpegThread(this);
     connect(thread, SIGNAL(receiveImage(QImage)), this, SLOT(updateImage(QImage)));
     image = QImage();

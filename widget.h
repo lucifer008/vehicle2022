@@ -1,6 +1,7 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
+#include "ffmpeg.h"
 #include "formtest.h"
 #include "formvideo.h"
 #include "mapindex.h"
@@ -23,6 +24,7 @@ private:
     FormVideo frmVideo;
     FormTest frmTest;
     MapIndex mapIndex;
+    FFmpegWidget ffWidget;
     void loadStyle(const QString &qssFile);
 private slots:
     void onCloseClicked();

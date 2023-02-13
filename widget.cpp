@@ -71,6 +71,14 @@ void Widget::mainMenuClicked(){
         return;
     } else if (btnTxt == "视频") {
         ui->stackedWidget->setCurrentIndex(1);
+        this->ffWidget.setWindowModality(Qt::ApplicationModal);
+        this->ffWidget.show();
+        //设置默认视频地址
+        this->ffWidget.setUrl("https://media.w3.org/2010/05/sintel/trailer.mp4");
+        this->ffWidget.open();
+
+        qDebug()<<"视频Demo.....";
+        return;
     } else if (btnTxt == "设置") {
         ui->stackedWidget->setCurrentIndex(2);
 
@@ -98,8 +106,10 @@ void Widget::mainMenuClicked(){
     Map mapTest;
     mapTest.test();
 
-    this->frmVideo.setWindowModality(Qt::ApplicationModal);
-    this->frmVideo.show();
+    //子项目窗体调用演示
+//    this->frmVideo.setWindowModality(Qt::ApplicationModal);
+//    this->frmVideo.show();
+
 }
 
 
