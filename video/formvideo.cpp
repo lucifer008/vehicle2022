@@ -28,7 +28,7 @@ FormVideo::FormVideo(QWidget *parent) :
     ui(new Ui::FormVideo)
 {
     ui->setupUi(this);
-    //无法提升，暂时代码引入
+    //无法提升时，暂时代码引入
     //this->ui->widget_2=new FormEmbed(this);
 
     //手动追加
@@ -39,6 +39,10 @@ FormVideo::FormVideo(QWidget *parent) :
         ffmpegWidget->setUrl("https://media.w3.org/2010/05/sintel/trailer.mp4");
        ffmpegWidget->open();
        qDebug()<<"播放已启动>>";
+
+       //提升demo
+       this->ui->widget->setUrl("https://media.w3.org/2010/05/sintel/trailer.mp4");
+       this->ui->widget->open();
     });
 
     // 设置控制台输出级别
