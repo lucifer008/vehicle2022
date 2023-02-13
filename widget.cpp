@@ -82,8 +82,10 @@ void Widget::mainMenuClicked(){
     } else if (btnTxt == "设置") {
         ui->stackedWidget->setCurrentIndex(2);
         //子项目窗体调用演示
+        //提升+手动增加控件展示
         this->frmVideo.setWindowModality(Qt::ApplicationModal);
         this->frmVideo.show();
+
         return;
     } else if (btnTxt == "地图") {
         ui->stackedWidget->setCurrentIndex(3);
@@ -96,6 +98,11 @@ void Widget::mainMenuClicked(){
 
     } else if (btnTxt == "情报") {
         ui->stackedWidget->setCurrentIndex(4);
+        //提升+控件布局
+        this->videoFFmpeg.setWindowModality(Qt::ApplicationModal);
+        this->videoFFmpeg.show();
+
+        return;
     }
     else if (btnTxt == "用户退出") {
         exit(0);

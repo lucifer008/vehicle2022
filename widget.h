@@ -5,6 +5,7 @@
 #include "formtest.h"
 #include "formvideo.h"
 #include "mapindex.h"
+#include "videoffmpeg.h"
 #include <QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -25,6 +26,7 @@ private:
     FormTest frmTest;
     MapIndex mapIndex;
     FFmpegWidget ffWidget;
+    VideoFFMpeg videoFFmpeg;
     void loadStyle(const QString &qssFile);
 private slots:
     void onCloseClicked();

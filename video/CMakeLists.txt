@@ -7,6 +7,7 @@ add_library(video SHARED
     ffmpeghead.h
     ffmpeg.cpp
     ffmpeg.h
+    videoffmpeg.h videoffmpeg.cpp videoffmpeg.ui
 )
 
 # 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
