@@ -24,10 +24,17 @@ set(PROJECT_SOURCES
 )
 # 类库定义和类库cmakeLists.txt文件呼应
 add_subdirectory(video)
-include_directories(./video)
+#include_directories(./video)
 add_subdirectory(map)
-include_directories(./map)
+#include_directories(./map)
 
+# 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
+# 兼容路径问题 begin 原因待接?,强指定代替 include_directories(./map)
+set(ffmpeg_libs_DIR ${CMAKE_CURRENT_SOURCE_DIR}/video/ffmpeg/ffmpeg4/winlib64)
+set(ffmpeg_headers_DIR ${CMAKE_CURRENT_SOURCE_DIR}/video/ffmpeg/ffmpeg4/include64)
+file(GLOB ffmpeg_dylibs ${ffmpeg_libs_DIR}/*.lib)
+include_directories(${ffmpeg_headers_DIR})
+# 兼容路径问题 end
 
 #资源文件设置
 #qt_add_resources(vehicle2022 "ResourceFile"
