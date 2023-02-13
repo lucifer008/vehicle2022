@@ -15,8 +15,8 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebChannel)
 #find_package(QT Qt6 REQUIRED COMPONENTS WebEngineWidgets)
 set(PROJECT_SOURCES
         main.cpp
-        widget.cpp
-        widget.h
+        home.cpp
+        home.h
         widget.ui
         test.h test.cpp
         formtest.h formtest.cpp formtest.ui

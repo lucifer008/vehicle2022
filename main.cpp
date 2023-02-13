@@ -1,4 +1,4 @@
-#include "widget.h"
+#include "home.h"
 
 #include <QApplication>
 
@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     font.setPixelSize(13);
     a.setFont(font);
 
-    Widget w;
+    Home w;
     w.show();
     return a.exec();
 }

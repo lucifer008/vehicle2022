@@ -1,4 +1,4 @@
-#include "widget.h"
+#include "home.h"
 #include "./ui_widget.h"
 #include <QList>
 #include <QMessageBox>
@@ -10,20 +10,20 @@
 #include "videotools.h"
 //#include "test.h"
 
-Widget::Widget(QWidget *parent)
+Home::Home(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
     //绑定通用按钮槽处理:最大化，最小化，关闭
-    connect(ui->pushButtonMin,&QPushButton::clicked,this,Widget::onMinClicked);
-    connect(ui->pushButtonMax,&QPushButton::clicked,this,Widget::onMaxClicked);
-    connect(ui->pushButtonClose,&QPushButton::clicked,this,Widget::onCloseClicked);
+    connect(ui->pushButtonMin,&QPushButton::clicked,this,Home::onMinClicked);
+    connect(ui->pushButtonMax,&QPushButton::clicked,this,Home::onMaxClicked);
+    connect(ui->pushButtonClose,&QPushButton::clicked,this,Home::onCloseClicked);
 
     //绑定主业务处理信号槽处理事件
     QList<QAbstractButton *> listBus=ui->widgetBusiness->findChildren<QAbstractButton *>();
     foreach (QAbstractButton *btn, listBus) {
-        connect(btn,&QToolButton::clicked,this,Widget::mainMenuClicked);
+        connect(btn,&QToolButton::clicked,this,Home::mainMenuClicked);
     }
 
     //测试皮肤
@@ -32,27 +32,27 @@ Widget::Widget(QWidget *parent)
     this->on_btnStyle_Lightblue_clicked();
 }
 
-Widget::~Widget()
+Home::~Home()
 {
     delete ui;
 }
-void Widget::onCloseClicked(){
+void Home::onCloseClicked(){
     QMessageBox msgBox;
     msgBox.setText("关闭.");
     msgBox.exec();
 }
-void Widget::onMinClicked() {
+void Home::onMinClicked() {
     QMessageBox msgBox;
     msgBox.setText("最小化.");
     msgBox.exec();
 }
-void Widget::onMaxClicked(){
+void Home::onMaxClicked(){
     QMessageBox msgBox;
     msgBox.setText("最大化.");
     msgBox.exec();
 }
 
-void Widget::mainMenuClicked(){
+void Home::mainMenuClicked(){
     QAbstractButton *btn=(QAbstractButton *)sender();
 
     QString btnTxt=btn->text();
@@ -124,7 +124,7 @@ void Widget::mainMenuClicked(){
 }
 
 
-void Widget::loadStyle(const QString &qssFile)
+void Home::loadStyle(const QString &qssFile)
 {
     //开启计时
     QElapsedTimer time;
@@ -155,17 +155,17 @@ void Widget::loadStyle(const QString &qssFile)
     qDebug() << "用时:" << time.elapsed();
 }
 
-void Widget::on_btnStyle_Lightblue_clicked()
+void Home::on_btnStyle_Lightblue_clicked()
 {
     loadStyle(":/qss/qss/lightblue.css");
 }
 
-void Widget::on_btnStyle_Flatgray_clicked()
+void Home::on_btnStyle_Flatgray_clicked()
 {
     loadStyle(":/qss/qss/flatgray.css");
 }
 
-void Widget::on_btnStyle_Blacksoft_clicked()
+void Home::on_btnStyle_Blacksoft_clicked()
 {
     loadStyle(":/qss/qss/blacksoft.css");
 }
