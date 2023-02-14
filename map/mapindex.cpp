@@ -3,15 +3,20 @@
 
 #include <QtWebEngineCore/QWebEngineSettings>
 
+#include <QNetworkProxyFactory>
+
 MapIndex::MapIndex(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MapIndex),
     m_view(new QWebEngineView(this))
 {
     ui->setupUi(this);
+
+    //debug很慢，release很快
     m_view->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
     //m_view->load(QUrl("https://map.baidu.com/"));
-    m_view->load(QUrl("https://www.google.com/maps/?hl=zh-cn"));
+    m_view->load(QUrl("https://ditu.amap.com/"));
+    //m_view->load(QUrl("https://www.google.com/maps/?hl=zh-cn"));
     ui->tabWidget->addTab(m_view,QString("在线地图"));
 
 
