@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include <QtWebEngineWidgets/QWebEngineView>
+
 namespace Ui {
 class MapIndex;
 }
@@ -17,6 +19,12 @@ public:
 
 private:
     Ui::MapIndex *ui;
+     QWebEngineView *m_view;
+      //QScopedPointer<FullScreenWindow> m_fullScreenWindow;
+
+   private slots:
+        //void fullScreenRequested(QWebEngineFullScreenRequest request);
+     void fullScreenRequested();
 };
 
 #endif // MAPINDEX_H
