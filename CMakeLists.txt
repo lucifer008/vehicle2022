@@ -29,7 +29,7 @@ add_subdirectory(map)
 #include_directories(./map)
 
 # 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
-# 兼容路径问题 begin 原因待接?,强指定代替 include_directories(./map)
+# 兼容路径问题 begin 原因待接?,强指定代替 include_directories(./map)，估计和cmake环境有问题，用include_directories引入会找不到头文件错误
 set(ffmpeg_libs_DIR ${CMAKE_CURRENT_SOURCE_DIR}/video/ffmpeg/ffmpeg4/winlib64)
 set(ffmpeg_headers_DIR ${CMAKE_CURRENT_SOURCE_DIR}/video/ffmpeg/ffmpeg4/include64)
 file(GLOB ffmpeg_dylibs ${ffmpeg_libs_DIR}/*.lib)
