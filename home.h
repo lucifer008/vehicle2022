@@ -39,7 +39,7 @@ private slots:
     void on_btnStyle_Flatgray_clicked();
     void on_btnStyle_Blacksoft_clicked();
 
-
+//按住窗口左键拖动处理
 protected:
     void mouseMoveEvent(QMouseEvent *event);
     void mousePressEvent(QMouseEvent *event);

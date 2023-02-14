@@ -30,9 +30,9 @@ Home::Home(QWidget *parent)
     }
 
     //测试皮肤
-    //this->on_btnStyle_Blacksoft_clicked();
+    this->on_btnStyle_Blacksoft_clicked();
     //this->on_btnStyle_Flatgray_clicked();
-    this->on_btnStyle_Lightblue_clicked();
+    //this->on_btnStyle_Lightblue_clicked();
 }
 
 Home::~Home()
@@ -46,14 +46,17 @@ void Home::onCloseClicked(){
      exit(0);
 }
 void Home::onMinClicked() {
-    QMessageBox msgBox;
-    msgBox.setText("最小化.");
-    msgBox.exec();
+//    QMessageBox msgBox;
+//    msgBox.setText("最小化.");
+//    msgBox.exec();
+
+   this->showMinimized();
 }
 void Home::onMaxClicked(){
-    QMessageBox msgBox;
-    msgBox.setText("最大化.");
-    msgBox.exec();
+//    QMessageBox msgBox;
+//    msgBox.setText("最大化.");
+//    msgBox.exec();
+    this->showMaximized();
 }
 
 void Home::mainMenuClicked(){
