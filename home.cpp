@@ -43,6 +43,7 @@ void Home::onCloseClicked(){
 //    QMessageBox msgBox;
 //    msgBox.setText("关闭.");
 //    msgBox.exec();
+    this->setCursor(QCursor(Qt::WaitCursor));
      exit(0);
 }
 void Home::onMinClicked() {
@@ -79,12 +80,14 @@ void Home::mainMenuClicked(){
         this->frmTest.show();
         return;
     } else if (btnTxt == "视频") {
+         this->setCursor(QCursor(Qt::WaitCursor));
         ui->stackedWidget->setCurrentIndex(1);
         this->ffWidget.setWindowModality(Qt::ApplicationModal);
         this->ffWidget.show();
         //设置默认视频地址
         this->ffWidget.setUrl("https://media.w3.org/2010/05/sintel/trailer.mp4");
         this->ffWidget.open();
+        this->setCursor(QCursor(Qt::ArrowCursor));
 
         qDebug()<<"视频Demo.....";
         return;
