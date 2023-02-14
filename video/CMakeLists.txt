@@ -10,6 +10,8 @@ add_library(video SHARED
     videoffmpeg.h videoffmpeg.cpp videoffmpeg.ui
 )
 
+#定义变量
+add_definitions(-ffmpeg4)
 # 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
 set(ffmpeg_libs_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpeg4/winlib64)
 set(ffmpeg_headers_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpeg4/include64)
