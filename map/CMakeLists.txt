@@ -1,5 +1,6 @@
 project(map)
-add_library(map SHARED
+# msvc编译机制不同，此处改动兼容,SHARE->STATIC
+add_library(map STATIC
     map.h
     map.cpp
     mapindex.h mapindex.cpp mapindex.ui

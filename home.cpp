@@ -16,14 +16,14 @@ Home::Home(QWidget *parent)
 {
     ui->setupUi(this);
     //绑定通用按钮槽处理:最大化，最小化，关闭
-    connect(ui->pushButtonMin,&QPushButton::clicked,this,Home::onMinClicked);
-    connect(ui->pushButtonMax,&QPushButton::clicked,this,Home::onMaxClicked);
-    connect(ui->pushButtonClose,&QPushButton::clicked,this,Home::onCloseClicked);
+    connect(ui->pushButtonMin,&QPushButton::clicked,this,&Home::onMinClicked);
+    connect(ui->pushButtonMax,&QPushButton::clicked,this,&Home::onMaxClicked);
+    connect(ui->pushButtonClose,&QPushButton::clicked,this,&Home::onCloseClicked);
 
     //绑定主业务处理信号槽处理事件
     QList<QAbstractButton *> listBus=ui->widgetBusiness->findChildren<QAbstractButton *>();
     foreach (QAbstractButton *btn, listBus) {
-        connect(btn,&QToolButton::clicked,this,Home::mainMenuClicked);
+        connect(btn,&QToolButton::clicked,this,&Home::mainMenuClicked);
     }
 
     //测试皮肤

@@ -1,5 +1,6 @@
 project(video)
-add_library(video SHARED
+# msvc编译机制不同，此处改动兼容,SHARE->STATIC
+add_library(video STATIC
     videotools.h
     videotools.cpp
     formembed.h formembed.cpp formembed.ui
