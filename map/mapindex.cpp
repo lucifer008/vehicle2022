@@ -10,7 +10,8 @@ MapIndex::MapIndex(QWidget *parent) :
 {
     ui->setupUi(this);
     m_view->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
-    m_view->load(QUrl("https://map.baidu.com/"));
+    //m_view->load(QUrl("https://map.baidu.com/"));
+    m_view->load(QUrl("https://www.google.com/maps/?hl=zh-cn"));
     ui->tabWidget->addTab(m_view,QString("在线地图"));
 
 
