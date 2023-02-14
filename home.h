@@ -21,6 +21,8 @@ public:
     ~Home();
 
 private:
+    bool mouse_press=false;
+    QPoint mousePoint;
     Ui::Widget *ui;
     FormVideo frmVideo;
     FormTest frmTest;
@@ -36,5 +38,12 @@ private slots:
     void on_btnStyle_Lightblue_clicked();
     void on_btnStyle_Flatgray_clicked();
     void on_btnStyle_Blacksoft_clicked();
+
+
+protected:
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+void mouseReleaseEvent(QMouseEvent *event);
+
 };
 #endif // WIDGET_H

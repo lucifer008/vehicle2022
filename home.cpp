@@ -14,11 +14,14 @@ Home::Home(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
+    //设置无边框
+    this->setWindowFlags(Qt::FramelessWindowHint);
+
     ui->setupUi(this);
     //绑定通用按钮槽处理:最大化，最小化，关闭
     connect(ui->pushButtonMin,&QPushButton::clicked,this,&Home::onMinClicked);
     connect(ui->pushButtonMax,&QPushButton::clicked,this,&Home::onMaxClicked);
-    connect(ui->pushButtonClose,&QPushButton::clicked,this,&Home::onCloseClicked);
+    connect(ui->toolButtonClose,&QToolButton::clicked,this,&Home::onCloseClicked);
 
     //绑定主业务处理信号槽处理事件
     QList<QAbstractButton *> listBus=ui->widgetBusiness->findChildren<QAbstractButton *>();
@@ -37,9 +40,10 @@ Home::~Home()
     delete ui;
 }
 void Home::onCloseClicked(){
-    QMessageBox msgBox;
-    msgBox.setText("关闭.");
-    msgBox.exec();
+//    QMessageBox msgBox;
+//    msgBox.setText("关闭.");
+//    msgBox.exec();
+     exit(0);
 }
 void Home::onMinClicked() {
     QMessageBox msgBox;
@@ -57,8 +61,8 @@ void Home::mainMenuClicked(){
 
     QString btnTxt=btn->text();
     QList<QAbstractButton *> tbtns = ui->widgetBusiness->findChildren<QAbstractButton *>();
-    foreach (QAbstractButton *btn, tbtns) {
-        btn->setChecked(btn == btn);
+    foreach (QAbstractButton *btnItem, tbtns) {
+        btn->setChecked(btnItem == btn);
     }
 
     if (btnTxt == "首页") {
@@ -168,4 +172,34 @@ void Home::on_btnStyle_Flatgray_clicked()
 void Home::on_btnStyle_Blacksoft_clicked()
 {
     loadStyle(":/qss/qss/blacksoft.css");
+}
+
+//窗口拖动
+void Home::mousePressEvent(QMouseEvent *event)
+{
+
+    if( (event->button() == Qt::LeftButton) ){
+        mouse_press = true;
+        mousePoint = event->globalPosition().toPoint()-this->pos();
+//        event->accept();
+    }
+    else if(event->button() == Qt::RightButton){
+        //如果是右键
+       // this->close();
+
+    }
+}
+void Home::mouseMoveEvent(QMouseEvent *event)
+{
+
+
+//    if(event->buttons() == Qt::LeftButton){  //如果这里写这行代码，拖动会有点问题
+    if(mouse_press){
+        move(event->globalPosition().toPoint() - mousePoint);
+//        event->accept();
+    }
+}
+void Home::mouseReleaseEvent(QMouseEvent *event)
+{
+    mouse_press = false;
 }

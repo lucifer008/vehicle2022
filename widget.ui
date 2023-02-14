@@ -100,17 +100,6 @@
       <item alignment="Qt::AlignTop">
        <widget class="QWidget" name="widget_2" native="true">
         <layout class="QGridLayout" name="gridLayout">
-         <item row="1" column="3">
-          <widget class="QPushButton" name="pushButtonClose">
-           <property name="text">
-            <string/>
-           </property>
-           <property name="icon">
-            <iconset theme="application-exit">
-             <normaloff>.</normaloff>.</iconset>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="2">
           <widget class="QPushButton" name="pushButtonMax">
            <property name="text">
@@ -121,7 +110,10 @@
          <item row="1" column="1">
           <widget class="QPushButton" name="pushButtonMin">
            <property name="text">
-            <string>最小化</string>
+            <string/>
+           </property>
+           <property name="flat">
+            <bool>false</bool>
            </property>
           </widget>
          </item>
@@ -137,6 +129,26 @@
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="1" column="3">
+          <widget class="QToolButton" name="toolButtonClose">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="text">
+            <string>X</string>
+           </property>
+           <property name="icon">
+            <iconset resource="ResourceFile.qrc">
+             <normaloff>:/img/images/btn_close.png</normaloff>:/img/images/btn_close.png</iconset>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonIconOnly</enum>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -323,6 +335,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="ResourceFile.qrc"/>
+ </resources>
  <connections/>
 </ui>
