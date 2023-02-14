@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
-find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets WebChannel)
-find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebChannel)
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets WebChannel WebEngineWidgets)
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebChannel WebEngineWidgets)
 #find_package(QT Qt6 REQUIRED COMPONENTS WebEngineWidgets)
 set(PROJECT_SOURCES
         main.cpp
@@ -69,7 +69,7 @@ else()
 endif()
 
 #引用库及自定义库设置
-target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets video map Qt6::WebChannel)
+target_link_libraries(vehicle2022 PRIVATE Qt${QT_VERSION_MAJOR}::Widgets video map Qt6::WebChannel Qt6::WebEngineWidgets)
 
 set_target_properties(vehicle2022 PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
