@@ -21,14 +21,14 @@ VideoFFMpeg::VideoFFMpeg(QWidget *parent) :
 //        this->ui->widget->open();
         if (ui->pushButtonOpen->text() == "打开") {
             ui->pushButtonOpen->setText("关闭");
-            ui->pushButtonOpen->setVisible(true);
+            //ui->pushButtonOpen->setVisible(true);
             QString url = ui->comboBoxVideoSource->currentText().trimmed();
             ui->widget->setUrl(url);
             ui->widget->open();
         } else {
             ui->pushButtonOpen->setText("打开");
-             ui->pushButtonOpen->setVisible(true);
-            ui->pushButtonOpen->close();
+            // ui->pushButtonOpen->setVisible(true);
+            ui->widget->close();
         }
     });
 }

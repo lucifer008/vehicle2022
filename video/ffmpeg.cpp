@@ -234,7 +234,14 @@ void FFmpegThread::run()
     while (!stopped) {
         //根据标志位执行初始化操作
         if (isPlay) {
-            this->init();
+            bool success=this->init();
+            //lucifer 2023年2月14日 09:11:31 视频资源找不到错误处理
+            if(!success){
+                qDebug()<<"视频错误!";
+                stopped=true;
+                free();
+                return;
+            }
             isPlay = false;
             continue;
         }
