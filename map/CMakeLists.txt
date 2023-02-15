@@ -4,22 +4,23 @@ add_library(map STATIC
     map.h
     map.cpp
     mapindex.h mapindex.cpp mapindex.ui
+    qrc_map.qrc
 )
 
 #资源追加
-#set(mapbrowser_resource_files
-#    "html/tel.png"
-#    "html/map.html"
-#    "html/dist/*.*"
-#)
-#qt_add_resources(mapdata_resources "map"
-#    PREFIX
-#        "/html"
-#    BASE
-#        ""
-#    FILES
-#        ${mapbrowser_resource_files}
-#)
+set(mapbrowser_resource_files
+    "html/tel.png"
+    "html/map.html"
+    "html/dist/*.*"
+)
+qt_add_resources(mapdata_resources "qrc_map"
+    PREFIX
+        "/html"
+    BASE
+        ""
+    FILES
+        ${mapbrowser_resource_files}
+)
 #set(htmdir,"${CMAKE_CURRENT_SOURCE_DIR}/testhtml")
 #include_directories(${htmdir})
 

@@ -8,7 +8,8 @@
 MapIndex::MapIndex(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::MapIndex),
-    m_view(new QWebEngineView(this))
+    m_view(new QWebEngineView(this)),
+    offm_view(new QWebEngineView(this))
 {
     ui->setupUi(this);
 
@@ -18,6 +19,11 @@ MapIndex::MapIndex(QWidget *parent) :
     m_view->load(QUrl("https://ditu.amap.com/"));
     //m_view->load(QUrl("https://www.google.com/maps/?hl=zh-cn"));
     ui->tabWidget->addTab(m_view,QString("在线地图"));
+
+
+    offm_view->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
+    offm_view->load(QUrl(QStringLiteral("qrc:/map.html")));;
+    ui->tabWidget->addTab(offm_view,QString("离线地图"));
 
 
 //     connect(m_view->page(),

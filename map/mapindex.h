@@ -20,6 +20,7 @@ public:
 private:
     Ui::MapIndex *ui;
      QWebEngineView *m_view;
+     QWebEngineView *offm_view;
       //QScopedPointer<FullScreenWindow> m_fullScreenWindow;
 
    private slots:
