@@ -6,6 +6,24 @@ add_library(map STATIC
     mapindex.h mapindex.cpp mapindex.ui
 )
 
+#资源追加
+#set(mapbrowser_resource_files
+#    "html/tel.png"
+#    "html/map.html"
+#    "html/dist/*.*"
+#)
+#qt_add_resources(mapdata_resources "map"
+#    PREFIX
+#        "/html"
+#    BASE
+#        ""
+#    FILES
+#        ${mapbrowser_resource_files}
+#)
+#set(htmdir,"${CMAKE_CURRENT_SOURCE_DIR}/testhtml")
+#include_directories(${htmdir})
+
+
 # 设置ffmpeg依赖库及头文件所在目录，并存进指定变量
 #set(ffmpeg_libs_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpeg4/winlib64)
 #set(ffmpeg_headers_DIR ${CMAKE_CURRENT_SOURCE_DIR}/ffmpeg/ffmpeg4/include64)
@@ -15,5 +33,6 @@ add_library(map STATIC
 #link_directories(${ffmpeg_libs_DIR})
 #target_link_libraries(video PRIVATE Qt6::Core Qt6::Widgets ${ffmpeg_dylibs})
 #find_package(map Qt6 REQUIRED COMPONENTS WebEngineWidgets)
+
 target_link_libraries(map PRIVATE Qt6::Core Qt6::Widgets Qt6::WebChannel)
 target_include_directories(map INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})
