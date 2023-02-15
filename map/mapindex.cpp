@@ -22,7 +22,7 @@ MapIndex::MapIndex(QWidget *parent) :
 
 
     offm_view->settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, true);
-    offm_view->load(QUrl(QStringLiteral("qrc:/map.html")));;
+    offm_view->load(QUrl(QStringLiteral("qrc:/html/map.html")));;
     ui->tabWidget->addTab(offm_view,QString("离线地图"));
 
 
